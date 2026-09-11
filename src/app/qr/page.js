@@ -73,7 +73,9 @@ export default function Home() {
         format: "a4",
       });
 
-      const baseUrl = process.env.DOMAIN || "http://localhost:3000";
+      const baseUrl = (
+        process.env.NEXT_PUBLIC_SITE_URL || window.location.origin
+      ).replace(/\/$/, "");
 
       // A4 ölçüleri
       const pageWidth = 210;
